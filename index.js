@@ -20,14 +20,18 @@ fi = (function() {
     },
 
     reduce: function(collection, callback, acc = 0) {
-      for (var i in collection) {
+      for (let i in collection) {
         acc = callback(acc, collection[i], collection)
       };
       return acc;
     },
 
-    functions: function() {
-
+    find: function(collection, predicate) {
+      for (let i in collection) {
+          if(predicate(collection[i])){
+            return collection[i]
+          };
+      };
     },
 
 
