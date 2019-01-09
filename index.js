@@ -52,6 +52,13 @@ fi = (function() {
       return num
     },
 
+    first: function(collection, num=0) {
+      return num ? collection.slice(0,num) : collection[0]
+    },
+
+    last: function(collection, num=0) {
+      return num ? collection.slice(collection.length-num, collection.length) : collection[collection.length - 1]
+    }
 
   }
 })()
