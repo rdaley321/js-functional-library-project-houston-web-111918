@@ -34,6 +34,24 @@ fi = (function() {
       };
     },
 
+    filter: function(collection,predicate) {
+      const newArray = [];
+      for (let i in collection){
+        if (predicate(collection[i])) {
+          newArray.push(collection[i])
+        }
+      }
+      return newArray;
+    },
+
+    size: function(collection) {
+      num = 0
+      for(let i in collection) {
+        num++
+      }
+      return num
+    },
+
 
   }
 })()
